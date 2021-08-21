@@ -29,12 +29,14 @@ import CategoryLogin from "./project/CategoryLogin";
 import CategoryHome from "./project/CategoryHome";
 import CategoryViewIssues from "./project/CategoryViewIssues";
 import Mapping from "./project/Mapping";
+import Feedback from "./project/Feedback"
 import IssueUpdate from "./project/CategoryIssueUpdate";
 import CategoryRepViewHistory from "./project/CategoryRepViewHistory";
 import AdminIssueUpdate from "./project/AdminIssueUpdate";
 import CategoryIssueUpdate from "./project/CategoryIssueUpdate";
 import ReopenIssue from "./project/ReopenIssue";
 import CloseIssue from "./project/CloseIssue";
+
 
 
 
@@ -66,12 +68,12 @@ export default function App() {
           <Route path='/ResetUserPassword' exact={true} component={ResetUserPassword}/> 
           <Route path='/reopenIssue/:id' exact={true} component={ReopenIssue}/> 
           <Route path='/closeIssue/:id' exact={true} component={CloseIssue}/>
+          <Route path='/feedback/:id' exact={true} component={Feedback}/>
           <Route path='/catagoryLogin' exact={true} component={CategoryLogin}/> 
           <Route path='/categoryHome' exact={true} component={CategoryHome}/> 
           <Route path='/ViewIssues' exact={true} component={CategoryViewIssues}/> 
           <Route path='/CategoryIssueUpdate/:id' exact={true} component={CategoryIssueUpdate}/> 
           <Route path='/CatRepIssueHistory' exact={true} component={CategoryRepViewHistory}/> 
-
         </Switch>
     </Router>
     </div></div>
