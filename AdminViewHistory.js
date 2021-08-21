@@ -98,7 +98,7 @@ export default class AdminViewHistory extends Component {
                                        <td width="100">{issue.issueStatus}</td>
                                         <td width="100">{issue.issueDate}</td>
                                    
-                                          <td>   {issue.issueStatus=="active"||issue.issueStatus=="new"||issue.issueStatus=="reopened"||issue.issueStatus=="map" ?  
+                                          <td>   {issue.issueStatus=="active"||issue.issueStatus=="new"||issue.issueStatus=="reopened"||issue.issueStatus=="map"||issue.issueStatus=="help" ?  
                                              <span className="text-right offset-5">
                                                     <Button className="ml-5 text-white btn-success" onClick={()=>this.editIssue(issue.id)}>resolve</Button>
                                                 </span>:''}

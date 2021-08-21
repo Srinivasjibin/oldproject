@@ -31,6 +31,15 @@ export default  class UserHistory extends Component {
                 console.log("Username",this.state.name)
             }).catch(error=>console.log("history error"))
     }
+    reopenIssue(id){
+        this.props.history.push(`/reopenIssue/${id}`);
+    }
+    closeIssue(id){
+        this.props.history.push(`/closeIssue/${id}`);
+    }
+    feedback(id){
+        this.props.history.push(`/feedback/${id}`);
+    }
     
 
     render() {
@@ -77,7 +86,21 @@ export default  class UserHistory extends Component {
                                        <td width="200">{issue.issueResolution}</td>
                                         <td width="100">{issue.issueCategory}</td>
                                        <td width="100">{issue.issueStatus}</td>
-                                        <td width="100">{issue.issueDate}</td></tr>
+                                        <td width="100">{issue.issueDate}</td>
+                                        <td>   {issue.issueStatus=="completed" ?  
+                                             
+                                                    <button className="ml-5 text-white btn-success" onClick={()=> this.reopenIssue(issue.id)}>Reopen</button>
+                                                :''}
+                                                </td><td>   {issue.issueStatus=="completed"?  
+                                             
+                                             <button className="ml-5 text-white btn-success" onClick={()=>this.closeIssue(issue.id)}>close</button>
+                                         :''}
+                                         </td>
+                                        <td>   {issue.issueStatus=="closed"&&issue.issueFeedback==null ?  
+                                             
+                                                    <button className="ml-5 text-white btn-success" onClick={()=>this.feedback(issue.id)}>Feedback</button>
+                                                :''}
+                                                </td></tr>
                                         </tbody>
                                     </div>
                                    

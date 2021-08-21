@@ -79,17 +79,55 @@ class UserHome extends Component {
                         </Accordion>
                     </div>
                    
-                })} </div>
-                
-           
-               
-                
-                
+                })} 
+                <h5 className="text-warning">feedback</h5>
+                <hr/>
+                {this.state.issues.filter(data=>data.issueFeedback!=null).map((issue, idx) => {
+                    return <div>
                     
-                
-                
-               
-               
+                        <Accordion >
+                        <div> 
+                                      <tr>
+                                      <td>
+                                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                        <p>Notification {idx + 1}</p>
+                                    </Accordion.Toggle>
+                                    </td></tr>
+                                    </div>
+                                <Accordion.Collapse eventKey="0">
+                                <table className="table">
+                                       
+                                       <div>
+                                          <tr><th>User Id</th>
+                                              <th>Issue name:</th>
+                                          <th>Feedback </th>
+                                        
+                                        
+                                          <th>Comments</th>
+                                       
+                                         
+                                        
+                                          </tr>
+                                          <tr><td>{issue.id}</td>
+                                              <td>{issue.issueName}</td>
+                                         <td>{issue.issueFeedback}</td>
+                                          <td>{issue.issueComments}</td>
+                                           
+                                           <td>   {issue.issueStatus=="help" ?  
+                                             <span className="text-right offset-5">
+                                                    <Button className="ml-5 text-white btn-success" onClick={()=>this.editIssue(issue.id)}>Resolve</Button>
+                                                </span>:''}
+                                                </td></tr>
+                                       </div>
+                                       </table>
+                                </Accordion.Collapse>
+                           
+                        </Accordion>
+                    </div>
+                   
+                })} 
+                </div>
+
             </Container>
             </ div>
                 </ div>
